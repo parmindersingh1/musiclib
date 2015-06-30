@@ -1,6 +1,7 @@
 <?php
 	# Autoload classes whenever it's needed
 	function __autoload($class_name) {
+		var_dump($class_name);
 		if (file_exists('classes/'.strtolower($class_name).'.class.inc.php')) 
 			require_once 'classes/'.strtolower($class_name).'.class.inc.php';
 		else

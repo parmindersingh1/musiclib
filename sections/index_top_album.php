@@ -1,11 +1,10 @@
 <?php
 	$top_album = Album::top();
-	$top_album = count($top_album) != 0? $top_album  : $top_album + array(null);
-	$top_album = $top_album[0];
+	$top_album = count($top_album) != 0? $top_album[0] : null;
 ?>
 <div class="nephritis">
 	<div>
-		<?php if(is_null($top_album[0])) { ?>
+		<?php if(is_null($top_album)) { ?>
     	  <p class="padded">
 			<span class="glyphicon glyphicon-music"></span> No Top Album Available
 		  </p>

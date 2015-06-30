@@ -1,11 +1,10 @@
 <?php
 	$top_song = Song::top();
-	$top_song = count($top_song) != 0? $top_song  : $top_song + array(null);
-	$top_song = $top_song[0];
+	$top_song = count($top_song) != 0? $top_song[0] : null;
 ?>
 <div class="belize-hole">
 	<div>
-		<?php if(is_null($top_song[0])) { ?>
+		<?php if(is_null($top_song)) { ?>
     	  <p class="padded">
 			<span class="glyphicon glyphicon-music"></span> No Top Song Available
 		  </p>
@@ -23,7 +22,7 @@
 			</div>
 			<p class="padded">
 				<a href="<?php print $top_song->getUrl(); ?>" data-toggle="tooltip" title="<?php print $top_song->getTitle(); ?>"><?php print truncateTextByChars( $top_song->getTitle() ); ?></a><br>
-				<small>by <a href="<?php print$top_song->getMainArtist()->getUrl(); ?>" data-toggle="tooltip" title="<?php print $top_song->getMainArtist(); ?>"><?php print truncateTextByChars( $top_song->getMainArtist() ); ?></a></small><br>
+				<small>by <a href="<?php print $top_song->getMainArtist()->getUrl(); ?>" data-toggle="tooltip" title="<?php print $top_song->getMainArtist(); ?>"><?php print truncateTextByChars( $top_song->getMainArtist() ); ?></a></small><br>
 			</p>
 			<div class="row">
 				<div class="col-md-12">
