@@ -14,8 +14,8 @@
 		<div class="collapse navbar-collapse midnight-blue" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="./"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li><a href="./tops"><span class="glyphicon glyphicon-stats"></span> Tops</a></li>
-				<li><a href="./rand"><span class="glyphicon glyphicon-random"></span> Random song</a></li>
+				<li><a href="./tops.php"><span class="glyphicon glyphicon-stats"></span> Tops</a></li>
+				<li><a href="./rand.php"><span class="glyphicon glyphicon-random"></span> Random song</a></li>
 			</ul>
 
 			<?php
@@ -27,8 +27,8 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="./img/users/<?php print $user->getPicture(); ?>" width="20px"> <?php print $user->getUsername(); ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="profile">Profile</a></li>
-								<li><a href="add">New artist / album</a></li>
+								<li><a href="profile.php">Profile</a></li>
+								<li><a href="add.php">New artist / album</a></li>
 								<!-- <li><a href="search">Advanced search</a></li> -->
 								<li class="divider"></li>
 								<li><a href="#" onclick="javascript:$('#logout').submit();">Log out</a></li>

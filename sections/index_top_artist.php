@@ -1,9 +1,16 @@
 <?php
 	$top_artist = Artist::top();
+	$top_artist = count($top_artist) != 0? $top_artist  : $top_artist + array(null);
 	$top_artist = $top_artist[0];
 ?>
 <div class="pomegranate">
 	<div>
+		<?php if(is_null($top_artist[0])) { ?>
+    	  <p class="padded">
+			<span class="glyphicon glyphicon-music"></span> No Top Artist Available
+		  </p>
+		
+		<?php } else {?>
 		<p class="padded">
 			<span class="glyphicon glyphicon-user"></span> Top artist
 			<span class="pull-right text-right">
@@ -26,5 +33,6 @@
 				</div>
 			</div>
 		</p>
+		<?php } ?>
 	</div>
 </div>

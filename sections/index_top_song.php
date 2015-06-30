@@ -1,10 +1,17 @@
 <?php
 	$top_song = Song::top();
+	$top_song = count($top_song) != 0? $top_song  : $top_song + array(null);
 	$top_song = $top_song[0];
 ?>
 <div class="belize-hole">
 	<div>
-		<p class="padded">
+		<?php if(is_null($top_song[0])) { ?>
+    	  <p class="padded">
+			<span class="glyphicon glyphicon-music"></span> No Top Song Available
+		  </p>
+		
+		<?php } else {?>
+			<p class="padded">
 			<span class="glyphicon glyphicon-music"></span> Top song
 			<span class="pull-right text-right">
 				<?php print (float)$top_song->getAverage(); ?> / 10<br>
@@ -25,6 +32,8 @@
 					</div>
 				</div>
 			</div>
-		</p>
+			</p>	
+			
+		<?php } ?>
 	</div>
 </div>
